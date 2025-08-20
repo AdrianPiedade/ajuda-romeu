@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaquinha para Tratamento do Romeu</title>
+    <style>
+        :root {
+            --primary: #4e54c8;
+            --secondary: #8f94fb;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .goal-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: -50px auto 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 50px;
+            height: 20px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            height: 100%;
+            border-radius: 50px;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        .donation-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .goal-amount {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .donate-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+        
+        .donate-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 3rem auto;
+        }
+        
+        @media (min-width: 768px) {
+            .content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        .story {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .updates {
+            margin-top: 2rem;
+        }
+        
+        .update {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .payment-option {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .facebook { background: #3b5998; }
+        .whatsapp { background: #25D366; }
+        .twitter { background: #1DA1F2; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Ajude no Tratamento do Romeu</h1>
+            <p>Meu gatinho está doente e precisa de um tratamento urgente</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="goal-container">
+            <h2>Vaquinha para o Tratamento</h2>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="donation-amount" id="donation-amount">R$ 0,00</div>
+            <div class="goal-amount">de R$ 5.000,00</div>
+            <button class="donate-btn" onclick="showDonationOptions()">Doar Agora</button>
+            
+            <div class="payment-options">
+                <div class="payment-option">
+                    <h3>PIX</h3>
+                    <p>Chave: 11958930041</p>
+                </div>
+                <div class="payment-option">
+                    <h3>Transferência</h3>
+                    <p>Banco: Itaú<br>Ag: 0736<br>C/C: 97243-1</p>
+                </div>
+            </div>
+            
+            <div class="social-share">
+                <a href="#" class="social-btn facebook" onclick="shareOnFacebook()">Facebook</a>
+                <a href="#" class="social-btn whatsapp" onclick="shareOnWhatsApp()">WhatsApp</a>
+                <a href="#" class="social-btn twitter" onclick="shareOnTwitter()">Twitter</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="story">
+                <h2>A História do Romeu</h2>
+                <p>Resgatamos o Romeu da rua junto com seus 2 irmãos filhotes. Porém percebemos que ele não se desenvolvia como seus irmãos. Ao levarmos a uma consulta, ele foi diagnosticado com a doença PIF Felina e precisa urgentemente de um tratamento específico. Os custos são altos e infelizmente não tenho condições de arcar sozinho com todas as despesas.</p>
+                
+                <p>O tratamento inclui:</p>
+                <ul>
+                    <li>Medicamentos injetáveis específicos</li>
+                    <li>Comprimidos</li>
+                    <li>Consultas veterinárias constantes</li>
+                </ul>
+                
+                <p>Qualquer ajuda, por menor que seja, fará uma enorme diferença. Desde já agradeço de coração a todos que puderem contribuir!</p>
+                
+                <div class="gallery">
+                    <img src="images/IMG-20250404-WA0008.jpg" alt="Foto do gatinho">
+                    <img src="images/IMG-20250819-WA0012.jpg" alt="Foto do gatinho">
+                    <img src="images/IMG-20250820-WA0003.jpg" alt="Foto do gatinho">
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <h3>Últimas Atualizações</h3>
+                <div class="updates">
+                    <div class="update">
+                        <h4>Consulta Unisa</h4>
+                        <p>Hoje levamos o Romeu para receber uma dosagem de soro, pois ele não está se alimentando.</p>
+                        <small>Publicado em: 20/08/2025</small>
+                    </div>
+                </div>
+                
+                <h3>Doadores Recentes</h3>
+                <ul id="recent-donors">
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Obrigado por ajudar a salvar a vida do meu gatinho!</p>
+            <p>Informações também são de grande ajuda ! Entre em contato: (11) 95893-0041 | (11) 95235-3715</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simulação de valores arrecadados (substitua com seus dados reais)
+        let donatedAmount = 0;
+        const goalAmount = 5000;
+        
+        // Atualizar barra de progresso e valor doado
+        document.getElementById('donation-amount').textContent = `R$ ${donatedAmount.toFixed(2)}`;
+        document.getElementById('progress').style.width = `${(donatedAmount / goalAmount) * 100}%`;
+        
+        function showDonationOptions() {
+            alert("Opções de doação:\n\nPIX: 11958930041\n\nTransferência Bancária:\nBanco: Itaú\nAgência: 0736\nConta: 97243-1\n\nMuito obrigado pela sua contribuição!");
+        }
+        
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent('Ajude no tratamento do meu gatinho! Sua contribuição é muito importante. ');
+            const url = encodeURIComponent(window.location.href);
+            const shareUrl = `https://wa.me/?text=${text}${url}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const text = encodeURIComponent('Ajude no tratamento do meu gatinho!');
+            const url = encodeURIComponent(window.location.href);
+            const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+            window.open(shareUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
