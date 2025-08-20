@@ -24,27 +24,28 @@
             background-color: #f5f5f5;
             color: var(--dark);
             line-height: 1.6;
+            font-size: 16px;
         }
         
         header {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
-            height: 180px;
+            padding: 1.5rem 1rem;
+            height: auto;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         .goal-container {
             background: white;
             border-radius: 10px;
-            padding: 2rem;
-            margin: -50px auto 2rem;
+            padding: 1.5rem;
+            margin: -30px auto 1.5rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             max-width: 800px;
             text-align: center;
@@ -53,8 +54,8 @@
         .progress-bar {
             background: #e9ecef;
             border-radius: 50px;
-            height: 20px;
-            margin: 1.5rem 0;
+            height: 18px;
+            margin: 1.2rem 0;
             overflow: hidden;
         }
         
@@ -67,66 +68,95 @@
         }
         
         .donation-amount {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
             color: var(--primary);
         }
         
         .goal-amount {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--dark);
         }
         
-        .donate-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            margin: 1rem 0;
-            transition: all 0.3s;
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
         
-        .donate-btn:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        .payment-option {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
         }
+        
+        .social-share {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .link-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .link-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .facebook { background: #3b5998; }
+        .whatsapp { background: #25D366; }
+        .twitter { background: #1DA1F2; }
         
         .content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 3rem auto;
-        }
-        
-        @media (min-width: 768px) {
-            .content {
-                grid-template-columns: 2fr 1fr;
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem auto;
         }
         
         .story {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .sidebar {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.8rem;
+            margin: 1.2rem 0;
         }
         
         .gallery img {
@@ -140,7 +170,7 @@
         }
         
         .updates {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         
         .update {
@@ -148,67 +178,110 @@
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
         
         footer {
             background: var(--dark);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
         }
         
-        .payment-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin: 1.5rem 0;
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
         }
         
-        .payment-option {
-            background: var(--light);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1;
-            min-width: 120px;
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         
-        .social-share {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
         }
         
-        .social-btn {
-            padding: 10px 15px;
-            border-radius: 5px;
-            color: white;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .link-btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s;
+        p, li {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
         }
         
-        .link-btn:hover {
-            background: var(--secondary);
+        ul {
+            padding-left: 1.2rem;
         }
         
-        .facebook { background: #3b5998; }
-        .whatsapp { background: #25D366; }
-        .twitter { background: #1DA1F2; }
+        /* Melhorias para mobile */
+        @media (max-width: 768px) {
+            header {
+                padding: 1.2rem 0.8rem;
+            }
+            
+            .goal-container {
+                padding: 1.2rem;
+                margin: -20px auto 1.2rem;
+            }
+            
+            .donation-amount {
+                font-size: 1.8rem;
+            }
+            
+            .payment-options {
+                gap: 0.8rem;
+            }
+            
+            .payment-option {
+                padding: 0.8rem;
+            }
+            
+            .social-share {
+                gap: 0.5rem;
+            }
+            
+            .social-btn {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .story, .sidebar {
+                padding: 1.2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 0.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .goal-container {
+                padding: 1rem;
+            }
+            
+            .social-btn {
+                padding: 7px 10px;
+                font-size: 0.8rem;
+            }
+            
+            .payment-option h3 {
+                font-size: 1.1rem;
+            }
+            
+            .payment-option p {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -227,7 +300,6 @@
             </div>
             <div class="donation-amount" id="donation-amount">R$ 0,00</div>
             <div class="goal-amount">de R$ 5.000,00</div>
-            <button class="donate-btn" onclick="showDonationOptions()">Doar Agora</button>
             
             <div class="payment-options">
                 <div class="payment-option">
@@ -250,24 +322,23 @@
         <div class="content">
             <div class="story">
                 <h2>A História do Romeu</h2>
-                <p>Resgatamos o Romeu da rua junto com seus 2 irmãos filhotes. Porém percebemos que ele não se desenvolvia como seus irmãos. Ao levarmos a uma consulta, ele foi diagnosticado com a doença PIF Felina e precisa urgentemente de um tratamento específico. Os custos são altos e infelizmente não tenho condições de arcar sozinho com todas as despesas.<br></p>
+                <p>Resgatamos o Romeu da rua junto com seus 2 irmãos filhotes. Porém percebemos que ele não se desenvolvia como seus irmãos. Ao levarmos a uma consulta, ele foi diagnosticado com a doença PIF Felina e precisa urgentemente de um tratamento específico. Os custos são altos e infelizmente não tenho condições de arcar sozinho com todas as despesas.</p>
                 
                 <p>O tratamento inclui:</p>
                 <ul>
                     <li>Medicamentos injetáveis específicos</li>
                     <li>Comprimidos</li>
                     <li>Consultas veterinárias constantes</li>
-                    <br>
                 </ul>
                 
                 <p>Qualquer ajuda, por menor que seja, fará uma enorme diferença. Desde já agradeço de coração a todos que puderem contribuir!</p>
-                <p> Entenda melhor a PIF : <br></p>
+                <p>Entenda melhor a PIF:</p>
                 <a href="https://www.petz.com.br/blog/peritonite-infecciosa-felina/amp/?gad_source=1&gad_campaignid=21283781731&gclid=Cj0KCQjw5JXFBhCrARIsAL1ckPu_iXy8g90pK5fq3J-9fuSuW8K7FfB_O8dt0tALfnVlMbkBtNxcm1gaAnrwEALw_wcB" class="link-btn" target="_blank">Visitar Site</a>
                 
                 <div class="gallery">
-                    <img src="images/IMG-20250404-WA0008.jpg" alt="Foto do gatinho">
-                    <img src="images/IMG-20250819-WA0012.jpg" alt="Foto do gatinho">
-                    <img src="images/IMG-20250820-WA0003.jpg" alt="Foto do gatinho">
+                    <img src="images/IMG-20250404-WA0008.jpg" alt="Foto do Romeu">
+                    <img src="images/IMG-20250819-WA0012.jpg" alt="Foto do Romeu">
+                    <img src="images/IMG-20250820-WA0003.jpg" alt="Foto do Romeu">
                 </div>
             </div>
             
@@ -293,8 +364,8 @@
     
     <footer>
         <div class="container">
-            <p>Obrigado por ajudar a salvar a vida do meu gatinho!</p>
-            <p>Informações também são de grande ajuda ! Entre em contato: (11) 95893-0041 | (11) 95235-3715</p>
+            <p>Obrigado por ajudar a salvar a vida do Romeu!</p>
+            <p>Informações também são de grande ajuda! Entre em contato: (11) 95893-0041 | (11) 95235-3715</p>
         </div>
     </footer>
 
@@ -307,10 +378,6 @@
         document.getElementById('donation-amount').textContent = `R$ ${donatedAmount.toFixed(2)}`;
         document.getElementById('progress').style.width = `${(donatedAmount / goalAmount) * 100}%`;
         
-        function showDonationOptions() {
-            alert("Opções de doação:\n\nPIX: 11958930041\n\nTransferência Bancária:\nBanco: Itaú\nAgência: 0736\nConta: 97243-1\n\nMuito obrigado pela sua contribuição!");
-        }
-        
         function shareOnFacebook() {
             const url = encodeURIComponent(window.location.href);
             const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
@@ -318,14 +385,14 @@
         }
 
         function shareOnWhatsApp() {
-            const text = encodeURIComponent('Ajude no tratamento do meu gatinho! Sua contribuição é muito importante. ');
+            const text = encodeURIComponent('Ajude no tratamento do Romeu! Sua contribuição é muito importante. ');
             const url = encodeURIComponent(window.location.href);
             const shareUrl = `https://wa.me/?text=${text}${url}`;
             window.open(shareUrl, '_blank');
         }
 
         function shareOnTwitter() {
-            const text = encodeURIComponent('Ajude no tratamento do meu gatinho!');
+            const text = encodeURIComponent('Ajude no tratamento do Romeu!');
             const url = encodeURIComponent(window.location.href);
             const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
             window.open(shareUrl, '_blank');
